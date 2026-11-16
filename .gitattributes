@@ -1,0 +1,10 @@
+# 统一换行符：脚本/md/html 用 LF，Windows 批处理用 CRLF
+* text=auto
+*.py   text eol=lf
+*.md   text eol=lf
+*.html text eol=lf
+*.yml  text eol=lf
+*.bat  text eol=crlf
+*.exe  binary
+*.png  binary
+*.jpg  binary

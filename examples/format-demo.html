@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>格式示例</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; max-width: 780px; margin: 32px auto; line-height: 1.7; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid #bbb; padding: 6px 12px; }
+  code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; }
+  pre { background: #f6f8fa; padding: 12px; border-radius: 6px; overflow: auto; }
+  blockquote { border-left: 3px solid #d0d0d0; margin-left: 0; padding-left: 12px; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>格式对照片</h1>
+<p>把下面每一块贴进有道笔记，看是否和预期一致。<br>
+用法：<code>python tools\ynote.py clip --html-file examples\format-demo.html</code>，然后 Ctrl+V。</p>
+
+<h2>1. 文字样式</h2>
+<p>
+  <b>加粗</b>、<i>斜体</i>、<u>下划线</u>、<s>删除线</s>，
+  普通文字，<span style="color:#C00000">红色（span style，推荐）</span>，
+  <span style="color:#0000CC">蓝色</span>，
+  <font color="red">这段 font 标签是故意写错的，有道不会变红</font>。
+</p>
+
+<h2>2. 表格</h2>
+<table>
+  <thead>
+    <tr><th>步骤</th><th>命令</th><th>说明</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><code>python tools\ynote.py list -f 0</code></td><td>列根目录</td></tr>
+    <tr><td>2</td><td><code>python tools\ynote.py read &lt;fileId&gt;</code></td><td>读正文</td></tr>
+    <tr><td>3</td><td><code>python tools\ynote.py clip --html-file a.html</code></td><td>写剪贴板</td></tr>
+  </tbody>
+</table>
+
+<h2>3. 列表</h2>
+<p>无序：</p>
+<ul>
+  <li>第一项</li>
+  <li>第二项（带 <b>加粗</b>）</li>
+</ul>
+<p>有序：</p>
+<ol>
+  <li>准备 HTML 片段</li>
+  <li>写进剪贴板</li>
+  <li>在编辑器里粘贴</li>
+</ol>
+
+<h2>4. 代码</h2>
+<p>行内代码：把片段写到剪贴板用 <code>ynote.py clip</code>。</p>
+<p>代码块：</p>
+<pre><code>python tools\setup.py
+python tools\ynote.py list -f 0
+python tools\ynote.py save-html --title "示例" --html-file examples\format-demo.html
+</code></pre>
+
+<h2>5. 引用</h2>
+<blockquote>
+  读接口只返回纯文本；想让脚本改富文本笔记，只能走「生成 HTML → 你自己粘贴」这条路。
+</blockquote>
+
+<h2>6. 图片</h2>
+<p>剪贴板里内联的 base64 图片不会上传到图床；需要图片时用：</p>
+<pre><code>python tools\ynote.py save-html --title "带图的笔记" --html-file examples\format-demo.html --image 截图.png
+</code></pre>
+
+</body>
+</html>

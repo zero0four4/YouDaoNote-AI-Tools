@@ -1,0 +1,25 @@
+# 下载的 CLI 本体，不入库（setup.py 会自动下载）
+bin/
+
+# 快照产物
+snapshot/
+*_snapshot/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 本地配置 / 凭据
+.youdaonote.json
+*.local.json
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 临时文件
+*.tmp
+~$*
